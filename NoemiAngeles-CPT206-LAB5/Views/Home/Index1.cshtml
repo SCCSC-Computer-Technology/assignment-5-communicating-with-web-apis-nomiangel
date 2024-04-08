@@ -1,0 +1,42 @@
+﻿@using Packt.Shared
+@model IEnumerable<Student_Profile>
+<h2>@ViewData["Title"]</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Company Name</th>
+            <th>Contact Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model is not null)
+        {
+            @foreach (Student_Profile in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => c.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => c.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => c.GPA)
+                        @Html.DisplayFor(modelItem => c.StudentEmail)
+                        @Html.DisplayFor(modelItem => c.Major)
+                        @Html.DisplayFor(modelItem => c.PhoneNumber)
+                        @Html.DisplayFor(modelItem => c.StudentUserName)
+                        @Html.DisplayFor(modelItem => c.hasedPassword)
+                        @Html.DisplayFor(modelItem => c.isVerified)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => c.password)
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
